@@ -1,6 +1,7 @@
 function time(){
     var d = new Date();
     var body = document.querySelector("body");
+ 
 
  
 
@@ -18,44 +19,48 @@ function time(){
       "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     ]
 
-    //Time Display
+//Time Parameters
 
     ap = "AM";
     hours = d.getHours();
     minutes = d.getMinutes();
     seconds = d.getSeconds();
 
+
+//Img change based on time of day
+
     if(hours < 7) {
         body.style.backgroundImage = "url('https://images.pexels.com/photos/1335115/pexels-photo-1335115.jpeg?cs=srgb&dl=pexels-konevi-1335115.jpg&fm=jpg')"
         body.style.height= "100vh";
-         body.style.backgroundSize = "cover";
-         body.style.backgroundRepeat = "no-repeat"
-         body.style.transition = "background-image 0.4s ease-in-out";
+        body.style.backgroundSize = "cover";
+        body.style.backgroundRepeat = "no-repeat"
+        body.style.transition = "background-image 0.4s ease-in-out";
    }
 
- else if (hours > 7 && hours < 15){
+    else if (hours > 7 && hours < 15){
     
         body.style.backgroundImage = "url('https://images.pexels.com/photos/1680140/pexels-photo-1680140.jpeg?cs=srgb&dl=pexels-daria-shevtsova-1680140.jpg&fm=jpg')"
         body.style.backgroundSize = "cover";
-         body.style.height= "100vh";
-         body.style.backgroundRepeat = "no-repeat"
-         body.style.transition = "background-image 0.4s ease-in-out";
+        body.style.height= "100vh";
+        body.style.backgroundRepeat = "no-repeat"
+        body.style.transition = "background-image 0.4s ease-in-out";
    }
 
-   else if (hours >= 15 && hours <= 18){
+    else if (hours >= 15 && hours <= 18){
      
         body.style.backgroundImage = "url('https://images.pexels.com/photos/3355788/pexels-photo-3355788.jpeg?cs=srgb&dl=pexels-quang-nguyen-vinh-3355788.jpg&fm=jpg')"
         body.style.backgroundSize = "cover";
-         body.style.height= "100vh";
-         body.style.backgroundRepeat = "no-repeat"
-         body.style.transition = "background-image 0.4s ease-in-out";
+        body.style.height= "100vh";
+        body.style.backgroundRepeat = "no-repeat"
+        body.style.transition = "background-image 0.4s ease-in-out";
    }
 
-   else if (hours > 18) {
-      body.style.backgroundImage = "url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?cs=srgb&dl=pexels-vlad-bagacian-1368382.jpg&fm=jpg')"
+    else if (hours > 18) {
+        body.style.backgroundImage = "url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?cs=srgb&dl=pexels-vlad-bagacian-1368382.jpg&fm=jpg')"
         body.style.backgroundSize = "cover";
-         body.style.backgroundRepeat = "no-repeat"
-         body.style.transition = "background-image 0.4s ease-in-out";
+        body.style.height= "100vh";
+        body.style.backgroundRepeat = "no-repeat"
+        body.style.transition = "background-image 0.4s ease-in-out";
    }
 
 
@@ -73,10 +78,12 @@ function time(){
     if(hours === 0){
         hours = 12;
     }
+
+//Time display
+ 
     var t = document.querySelector(".clock").innerHTML = `${hours} : ${minutes} ${ap} `;
 
-
-    //Date Display
+//Date Display
 
     var date = d.getDate();
    
@@ -86,11 +93,14 @@ function time(){
     mon = month[d.getMonth()]
 
     var DD = document.querySelector(".date");
+    var dayDisplay = document.querySelector(".day");
+    dayDisplay.innerHTML = day;
 
-    DD.innerHTML = `${day},  ${mon} ${date},   ${year}`
+    DD.innerHTML = `  ${mon} ${date},   ${year}`
+
+  
 
 
-    //Img change based on time of day
    
    
   
